@@ -7,22 +7,32 @@ WORKDIR /usr/src/app
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
+sudo yum -y install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+cd var
+mkdir www && cd www
+mkdir html 
+
+cd ~/
+
 COPY assets/ /assets/
-COPY package*.json ./
-COPY Dockerfile ./
-COPY Jenkinsfile ./
-COPY travel.html ./
-COPY services.yml ./
-COPY services.html ./
-COPY pods.yml ./
-COPY onepage.html ./
-COPY index.html ./
-COPY contact.html ./
-COPY city-guides.html ./
-COPY changeTag.sh ./
-COPY buildspec.yml ./
-COPY README.txt ./
-COPY README.md ./
+COPY package*.json /var/www/html
+COPY Dockerfile /var/www/html
+COPY Jenkinsfile /var/www/html
+COPY travel.html /var/www/html
+COPY services.yml /var/www/html
+COPY services.html /var/www/html
+COPY pods.yml /var/www/html
+COPY onepage.html /var/www/html
+COPY index.html /var/www/html
+COPY pcontact.html /var/www/html
+COPY city-guides.html /var/www/html
+COPY changeTag.sh /var/www/html
+COPY buildspec.yml /var/www/html
+COPY README.txt /var/www/html
+COPY README.md /var/www/html
 
 
 RUN npm install
