@@ -7,6 +7,15 @@ FROM node:carbon
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
+
+FROM centos:7
+
+#MAINTAINER The CentOS Project <cloud-ops@centos.org>
+
+LABEL Vendor="CentOS" \
+    License=GPLv2 \
+    Version=2.4.6-40
+
 RUN yum install httpd -y
 RUN systemctl start httpd
 RUN systemctl enable httpd
