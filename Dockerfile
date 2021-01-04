@@ -44,7 +44,7 @@ COPY README.txt /var/www/html
 COPY README.md /var/www/html
 
 
-RUN yum install npm -y
+RUN yum -y install nodejs npm
 # If you are building your code for production
 # RUN npm install --only=production
 
