@@ -9,13 +9,13 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-app
+      app: placesapp
   strategy:
     type: Recreate
   
 spec:
   containers:
-    - name: placesapp
+    - name: placesapp:tagVersion
       image: docker.io/timbobb/placesapp:tagVersion
       ports:
         - containerPort: 8080
