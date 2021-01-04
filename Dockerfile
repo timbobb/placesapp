@@ -16,9 +16,9 @@ LABEL Vendor="CentOS" \
     License=GPLv2 \
     Version=2.4.6-40
 
+RUN yum update -y
 RUN yum install httpd -y
-RUN service httpd start 
-RUN service httpd enable
+ENTRYPOINT ["/usr/sbin/httpd","-D","FOREGROUND"]
 
 RUN cd var
 RUN mkdir www && cd www
