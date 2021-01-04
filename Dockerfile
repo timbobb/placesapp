@@ -7,9 +7,9 @@ WORKDIR /usr/src/app
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
-RUN sudo yum -y install httpd -y
-RUN sudo systemctl start httpd
-RUN sudo systemctl enable httpd
+RUN yum -y install httpd -y
+RUN systemctl start httpd
+RUN systemctl enable httpd
 
 RUN cd var
 RUN mkdir www && cd www
