@@ -53,5 +53,5 @@ COPY README.md /var/www/html
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
+EXPOSE 80 8080
 CMD [ "npm", "start" ]
