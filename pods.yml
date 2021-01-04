@@ -4,10 +4,24 @@ metadata:
   name: placesapp
   labels:
     app: placesapp
+
 spec:
-  containers:
-    - name: placesapp
-      image: docker.io/timbobb/placesapp:tagVersion
-      ports:
+  selector:
+    matchLabels:
+      app: placesapp
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: placesapp
+        tier: frontend
+    spec:
+      containers:
+      - name: placesapp
+        image: docker.io/timbobb/placesapp:tagVersion
+        ports:
         - containerPort: 8080
-  restartPolicy: Always
+          name: placesapp
+    restartPolicy: Always
