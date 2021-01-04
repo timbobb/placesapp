@@ -17,7 +17,7 @@ COPY services.html ./
 COPY pods.yml ./
 COPY onepage.html ./
 COPY index.html ./
-COPY pcontact.html ./
+COPY contact.html ./
 COPY city-guides.html ./
 COPY changeTag.sh ./
 COPY buildspec.yml ./
