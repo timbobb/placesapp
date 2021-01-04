@@ -44,12 +44,12 @@ COPY README.txt /var/www/html
 COPY README.md /var/www/html
 
 
-RUN npm install
+#RUN npm install
 # If you are building your code for production
 # RUN npm install --only=production
 
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
+EXPOSE 80
 CMD [ "npm", "start" ]
