@@ -36,7 +36,7 @@ COPY services.html /var/www/html
 COPY pods.yml /var/www/html
 COPY onepage.html /var/www/html
 COPY index.html /var/www/html
-COPY pcontact.html /var/www/html
+COPY contact.html /var/www/html
 COPY city-guides.html /var/www/html
 COPY changeTag.sh /var/www/html
 COPY buildspec.yml /var/www/html
