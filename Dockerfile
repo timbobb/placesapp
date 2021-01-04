@@ -44,7 +44,9 @@ COPY README.txt /var/www/html
 COPY README.md /var/www/html
 
 
-RUN yum -y install nodejs npm
+RUN yum -y yum install epel-release
+RUN yum -y yum install nodejs
+RUN yum -y yum install npm
 # If you are building your code for production
 # RUN npm install --only=production
 
