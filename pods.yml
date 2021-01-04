@@ -6,7 +6,7 @@ metadata:
     app: placesapp
 spec:
   containers:
-    - name: placesapp:tagVersion
+    - name: placesapp
       image: docker.io/timbobb/placesapp:tagVersion
       ports:
         - containerPort: 8080
