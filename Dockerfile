@@ -17,8 +17,8 @@ LABEL Vendor="CentOS" \
     Version=2.4.6-40
 
 RUN yum install httpd -y
-RUN systemctl start httpd
-RUN systemctl enable httpd
+RUN service httpd start 
+RUN service httpd enable
 
 RUN cd var
 RUN mkdir www && cd www
