@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: placesapp
+  name: placesap:tagVersionp
   labels:
     app: placesapp
 spec:
@@ -10,4 +10,4 @@ spec:
       image: docker.io/timbobb/placesapp:tagVersion
       ports:
         - containerPort: 8080
-  #restartPolicy: Always
+  restartPolicy: Always
