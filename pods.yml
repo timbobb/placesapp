@@ -12,11 +12,7 @@ spec:
       tier: frontend
   strategy:
     type: Recreate
-  template:
-    metadata:
-      labels:
-        app: placesapp
-        tier: frontend
+
     spec:
       containers:
       - name: placesapp
