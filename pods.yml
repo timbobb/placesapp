@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: placesap:tagVersion
+  name: placesapp:tagVersion
   labels:
     app: placesapp
 spec:
