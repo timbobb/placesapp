@@ -1,23 +1,22 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
   name: placesapp
   labels:
     app: placesapp
 
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      app: placesapp
-      tier: frontend
+      app: my-app
   strategy:
     type: Recreate
-
-    spec:
-      containers:
-      - name: placesapp
-        image: docker.io/timbobb/placesapp:tagVersion
-        ports:
+  
+spec:
+  containers:
+    - name: placesapp
+      image: docker.io/timbobb/placesapp:tagVersion
+      ports:
         - containerPort: 8080
-          name: placesapp
-    restartPolicy: Always
+  restartPolicy: Always
