@@ -28,7 +28,7 @@ RUN mkdir html
 
 RUN cd ~/
 
-COPY assets/ /assets/
+COPY assets/ /var/www/html/assets/
 COPY package*.json /var/www/html
 COPY Dockerfile /var/www/html
 COPY Jenkinsfile /var/www/html
