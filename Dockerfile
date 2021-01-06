@@ -17,7 +17,9 @@ LABEL Vendor="CentOS" \
     Version=2.4.6-40
 
 RUN yum update -y
-RUN yum install httpd -y
+RUN yum -y --setopt=tsflags=nodocs update && \
+    yum -y --setopt=tsflags=nodocs install httpd && \
+    yum clean all
 ENTRYPOINT ["/usr/sbin/httpd","-D","FOREGROUND"]
 
 RUN cd var
@@ -54,4 +56,9 @@ COPY README.md /var/www/html
 COPY . .
 
 EXPOSE 80 8080
-CMD [ "npm", "start" ]
+
+# Simple startup script to avoid some issues observed with container restart
+ADD run-httpd.sh /run-httpd.sh
+RUN chmod -v +x /run-httpd.sh
+
+CMD ["/run-httpd.sh"]
